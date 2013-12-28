@@ -7,8 +7,8 @@
 <body>
 <% for my $image (@{$image_list}) { %>
     <div class="grid">
-        <a href="<%= $image->{url} %>"><img src="<%= $image->{thumbnail} %>"></a><br />
-        <a href="<%= $image->{url} %>"><%= $image->{entry_id} %></a>
+        <div class="center"><a href="<%= $image->{url} %>"><img src="<%= $image->{thumbnail} %>"></a></div>
+        <div class="center"><a href="<%= $image->{url} %>"><%= $image->{entry_id} %></a></div>
     </div>
 <% } %>
 </body>

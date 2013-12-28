@@ -3,3 +3,7 @@
     float: left;
     list-style: none;
 }
+
+.center {
+    text-align: center;
+}
