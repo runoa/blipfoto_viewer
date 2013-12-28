@@ -2,8 +2,8 @@
 <html>
 <body>
 <% for my $image (@{$image_list}) { %>
-<p><img src="<%= $image->{thumbnail} %>"></p>
-<p><%= $image->{entry_id} %></p>
+<p><a href="<%= $image->{url} %>"><img src="<%= $image->{thumbnail} %>"></a></p>
+<p><a href="<%= $image->{url} %>"><%= $image->{entry_id} %></a></p>
 <% } %>
 </body>
 </html>
