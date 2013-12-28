@@ -10,6 +10,7 @@ sub startup {
 
   # Router
   my $r = $self->routes;
+  $r->namespaces(['BlipfotoViewer::Controller']);
 
   # Normal route to controller
   $r->get('/')->to('example#welcome');
