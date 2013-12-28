@@ -6,6 +6,8 @@ use JSON qw/decode_json/;
 use Parallel::ForkManager;
 use Data::Dumper;
 
+use constant VIEW_COUNT => 50;
+
 sub get_data {
     my ($self, $url) = @_;
     my $api_key = '204caf772d87ddb7a51fe389b954253f';
@@ -21,7 +23,7 @@ sub get_data_parallel {
     my ($self, @urls) = @_;
     my @image_list;
     my $pm = Parallel::ForkManager->new($#urls);
-    $pm->run_on_finish( sub {
+    $pm->run_on_finish( sub { #並列に取ってきたデータを@image_listにためておく
         my ($pid, $exit_code, $ident, $exit_signal, $core_dump, $data) = @_;
         push @image_list, @{$data->{index}};
     });
@@ -48,6 +50,7 @@ sub get_image_list {
     );
     my @image_list = $self->get_data_parallel(@urls);
     @image_list = $self->sort_data(@image_list);
+    $#image_list = VIEW_COUNT - 1; #表示件数をVIEW_COUNT件に制限する
     return \@image_list;
 }
 
