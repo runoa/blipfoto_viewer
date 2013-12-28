@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <link rel='stylesheet' type='text/css' href='css/grid_style.css' />
+</head>
 <body>
-<% for my $image (@{$image_list}) { %>
-<p><a href="<%= $image->{url} %>"><img src="<%= $image->{thumbnail} %>"></a></p>
-<p><a href="<%= $image->{url} %>"><%= $image->{entry_id} %></a></p>
+<ul>
+    <% for my $image (@{$image_list}) { %>
+    <li class="grid">
+        <a href="<%= $image->{url} %>"><img src="<%= $image->{thumbnail} %>"></a><br />
+        <a href="<%= $image->{url} %>"><%= $image->{entry_id} %></a>
+    </li>
 <% } %>
+</ul>
 </body>
 </html>
