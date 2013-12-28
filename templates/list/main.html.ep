@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <body>
-<p><img src="<%= $img_url %>"></p>
+<% for my $image (@{$image_list}) { %>
+<p><img src="<%= $image->{thumbnail} %>"></p>
+<p><%= $image->{entry_id} %></p>
+<% } %>
 </body>
 </html>

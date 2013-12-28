@@ -554,6 +554,18 @@ DISTRIBUTIONS
       IO::Select 0
       IO::Socket::INET 0
       perl 5.006002
+  Parallel-ForkManager-1.06
+    pathname: S/SZ/SZABGAB/Parallel-ForkManager-1.06.tar.gz
+    provides:
+      Parallel::ForkManager 1.06
+    requirements:
+      ExtUtils::MakeMaker 0
+      File::Path 2
+      File::Spec 0
+      File::Temp 0
+      POSIX 0
+      Storable 0
+      Test::More 0.80
   Parse-CPAN-Meta-1.4409
     pathname: D/DA/DAGOLDEN/Parse-CPAN-Meta-1.4409.tar.gz
     provides:

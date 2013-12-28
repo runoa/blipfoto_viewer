@@ -3,4 +3,5 @@ requires 'Mojolicious';
 requires 'LWP';
 requires 'JSON';
 requires 'Data::Dumper';
-requires 'Class::Accessor';
+requires 'Class::Accessor::Fast';
+requires 'Parallel::ForkManager';

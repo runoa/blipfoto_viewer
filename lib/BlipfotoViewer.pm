@@ -9,17 +9,17 @@ __PACKAGE__->attr( manager => sub {
 
 # This method will run once at server start
 sub startup {
-  my $self = shift;
+    my $self = shift;
 
-  # Documentation browser under "/perldoc"
-  $self->plugin('PODRenderer');
+    # Documentation browser under "/perldoc"
+    $self->plugin('PODRenderer');
 
-  # Router
-  my $r = $self->routes;
-  $r->namespaces(['BlipfotoViewer::Controller']);
+    # Router
+    my $r = $self->routes;
+    $r->namespaces(['BlipfotoViewer::Controller']);
 
-  # Normal route to controller
-  $r->get('/')->to('list#main');
+    # Normal route to controller
+    $r->get('/')->to('list#main');
 }
 
 1;
