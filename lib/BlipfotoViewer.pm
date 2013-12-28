@@ -13,7 +13,7 @@ sub startup {
   $r->namespaces(['BlipfotoViewer::Controller']);
 
   # Normal route to controller
-  $r->get('/')->to('example#welcome');
+  $r->get('/')->to('list#main');
 }
 
 1;
