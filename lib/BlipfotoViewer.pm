@@ -1,6 +1,12 @@
 package BlipfotoViewer;
 use Mojo::Base 'Mojolicious';
 
+use BlipfotoViewer::Manager;
+
+__PACKAGE__->attr( manager => sub {
+    return BlipfotoViewer::Manager->new;
+});
+
 # This method will run once at server start
 sub startup {
   my $self = shift;
