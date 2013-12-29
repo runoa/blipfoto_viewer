@@ -1,10 +1,10 @@
 package BlipfotoViewer;
 use Mojo::Base 'Mojolicious';
 
-use BlipfotoViewer::Manager;
+use BlipfotoViewer::ImageManager;
 
-__PACKAGE__->attr( manager => sub {
-    return BlipfotoViewer::Manager->new;
+__PACKAGE__->attr( image_manager => sub {
+    return BlipfotoViewer::ImageManager->new;
 });
 
 # This method will run once at server start

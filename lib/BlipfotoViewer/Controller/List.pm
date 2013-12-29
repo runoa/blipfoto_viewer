@@ -5,9 +5,9 @@ use Mojo::Base 'Mojolicious::Controller';
 sub main {
     my $self = shift;
 
-    my @image_list = $self->app->manager->get_image_list;
+    my @image_list = $self->app->image_manager->get_image_list;
 
-    # Render template "example/welcome.html.ep" with message
+    # Render template "list/main.html.ep" with message
     $self->render(image_list => @image_list);
 }
 

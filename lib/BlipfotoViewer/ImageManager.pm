@@ -1,4 +1,4 @@
-package BlipfotoViewer::Manager;
+package BlipfotoViewer::ImageManager;
 use base qw/Class::Accessor::Fast/;
 
 use LWP;
