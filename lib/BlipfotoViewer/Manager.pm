@@ -22,7 +22,7 @@ sub get_data {
 sub get_data_parallel {
     my ($self, @urls) = @_;
     my @image_list;
-    my $pm = Parallel::ForkManager->new($#urls);
+    my $pm = Parallel::ForkManager->new($#urls + 1);
     $pm->run_on_finish( sub { #並列に取ってきたデータを@image_listにためておく
         my ($pid, $exit_code, $ident, $exit_signal, $core_dump, $data) = @_;
         push @image_list, @{$data->{index}};
