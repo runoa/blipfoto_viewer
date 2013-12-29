@@ -8,8 +8,15 @@ use Data::Dumper;
 
 use constant VIEW_COUNT => 50;
 
+sub is_valid_url {
+    my ($self, $url) = @_;
+    return 1 if ($url =~ m/^http:\/\/api\.blipfoto\.com\//);
+    return 0;
+}
+
 sub get_data {
     my ($self, $url) = @_;
+    return unless $self->is_valid_url($url);
     my $api_key = '204caf772d87ddb7a51fe389b954253f';
     my $ua = new LWP::UserAgent;
     my $req = HTTP::Request->new(GET => $url . "&api_key=${api_key}");
@@ -25,7 +32,7 @@ sub get_data_parallel {
     my $pm = Parallel::ForkManager->new($#urls + 1);
     $pm->run_on_finish( sub { #並列に取ってきたデータを@image_listにためておく
         my ($pid, $exit_code, $ident, $exit_signal, $core_dump, $data) = @_;
-        push @image_list, @{$data->{index}};
+        push @image_list, @{$data->{index}} if $data;
     });
     for my $url (@urls) {
         $pm->start and next;
