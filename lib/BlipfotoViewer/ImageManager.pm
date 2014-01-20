@@ -5,6 +5,7 @@ use LWP;
 use JSON qw/decode_json/;
 use Parallel::ForkManager;
 use Data::Dumper;
+use YAML;
 
 use constant VIEW_COUNT => 50;
 
@@ -50,11 +51,8 @@ sub sort_data {
 
 sub get_image_list {
     my $self = shift;
-    my @urls = (
-        'http://api.blipfoto.com/v3/search.json?query=couple&max=50',
-        'http://api.blipfoto.com/v3/view.json?view=everything&max=50',
-        'http://api.blipfoto.com/v3/view.json?view=rated&max=50',
-    );
+    my $conf = YAML::LoadFile("config/config.yaml");
+    my @urls = @{$conf->{api_list}};
     my @image_list = $self->get_data_parallel(@urls);
     @image_list = $self->sort_data(@image_list);
     $#image_list = VIEW_COUNT - 1; #表示件数をVIEW_COUNT件に制限する

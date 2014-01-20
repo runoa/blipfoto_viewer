@@ -1,0 +1,5 @@
+api_list:
+  - 'http://api.blipfoto.com/v3/search.json?query=couple&max=50'
+  - 'http://api.blipfoto.com/v3/view.json?view=everything&max=50'
+  - 'http://api.blipfoto.com/v3/view.json?view=rated&max=50'
+

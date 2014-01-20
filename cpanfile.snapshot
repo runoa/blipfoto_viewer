@@ -827,6 +827,36 @@ DISTRIBUTIONS
       Fcntl 0
       URI 1.10
       perl 5.008001
+  YAML-0.88
+    pathname: I/IN/INGY/YAML-0.88.tar.gz
+    provides:
+      Test::YAML 0.88
+      Test::YAML::Filter 0.88
+      YAML 0.88
+      YAML::Any 0.88
+      YAML::Dumper 0.88
+      YAML::Dumper::Base 0.88
+      YAML::Error 0.88
+      YAML::Loader 0.88
+      YAML::Loader::Base 0.88
+      YAML::Marshall 0.88
+      YAML::Mo 0.88
+      YAML::Node 0.88
+      YAML::Tag 0.88
+      YAML::Type::blessed 0.88
+      YAML::Type::code 0.88
+      YAML::Type::glob 0.88
+      YAML::Type::ref 0.88
+      YAML::Type::regexp 0.88
+      YAML::Type::undef 0.88
+      YAML::Types 0.88
+      YAML::Warning 0.88
+      yaml_mapping 0.88
+      yaml_scalar 0.88
+      yaml_sequence 0.88
+    requirements:
+      ExtUtils::MakeMaker 6.59
+      perl 5.008001
   libwww-perl-6.05
     pathname: G/GA/GAAS/libwww-perl-6.05.tar.gz
     provides:
